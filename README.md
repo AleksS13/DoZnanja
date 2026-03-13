@@ -1,5 +1,9 @@
 # DoZnanja
 
+![GitHub repo size](https://img.shields.io/github/repo-size/AleksS13/DoZnanja)
+![GitHub last commit](https://img.shields.io/github/last-commit/AleksS13/DoZnanja)
+![GitHub stars](https://img.shields.io/github/stars/AleksS13/DoZnanja)
+
 **DoZnanja** je web platforma za online učenje inspirisana sistemima poput **Udemy-a**, razvijena kao timski projekat. Platforma omogućava korisnicima da kupuju kurseve, pristupaju edukativnom sadržaju, postaju kreatori kurseva, rješavaju kvizove provjere znanja i komuniciraju putem integrisanog chat sistema.
 
 Poseban fokus projekta je na internom **token sistemu**, gdje korisnici kupuju tokene pravim novcem i zatim ih koriste za kupovinu kurseva i pristup premium sadržaju.
@@ -53,6 +57,24 @@ Poseban fokus projekta je na internom **token sistemu**, gdje korisnici kupuju t
 - Git & GitHub
 - slojevita organizacija projekta
 
+
+## System Architecture
+
+Platforma je razvijena kao full-stack web aplikacija sa jasno odvojenim slojevima.
+
+User (Browser)
+      ↓
+Frontend (Next.js / React)
+      ↓
+REST API
+      ↓
+Backend (FastAPI)
+      ↓
+Database (PostgreSQL)
+
+Frontend komunicira sa backendom putem REST API poziva,
+dok backend upravlja poslovnom logikom, autentifikacijom,
+token sistemom i komunikacijom sa bazom podataka.
 ---
 
 ## Arhitektura projekta
@@ -113,7 +135,7 @@ Kreatori imaju pregled svojih kurseva, statistike i osnovnih aktivnosti kroz pos
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
-
+```
 ###Frontend
 
 cd frontend
